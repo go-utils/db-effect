@@ -1,2 +1,3 @@
 # go-repo-gen
-テスト
+
+Wikiを参照
