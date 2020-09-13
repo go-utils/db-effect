@@ -22,15 +22,14 @@ func (this InsertInt) InsertionParam() (string, Any) {
 // ---------- string / Select ---------- //
 
 type SelectString struct {
-	TableName     string
-	ExistingValue string
-	Limit         int
+	TableName string
+	Query     string
 }
 
 func (this SelectString) Apply(ip Interpreter) RuntimeContext {
 	return ip.Select(this)
 }
 
-func (this SelectString) SelectionParam() (string, Any, int) {
-	return this.TableName, this.ExistingValue, this.Limit
+func (this SelectString) SelectionParam() (string, Any) {
+	return this.TableName, this.Query
 }

@@ -7,22 +7,36 @@ import (
 func MockDB() Interpreter {
 	return Interpreter{
 		Insert: func(effect Insert) RuntimeContext {
-			// tableName, newValue
-			_, newValue := effect.InsertionParam()
 			return RuntimeContext{
 				OK:  true,
 				Err: nil,
-				Ctx: newValue,
+				Ctx: nil,
 			}
 		},
 
 		Select: func(effect Select) RuntimeContext {
-			// tableName, existingValue, limit
-			_, existingValue, _ := effect.SelectionParam()
+			// tableName, query
+			_, query := effect.SelectionParam()
 			return RuntimeContext{
 				OK:  true,
 				Err: nil,
-				Ctx: existingValue,
+				Ctx: query,  // should return something
+			}
+		},
+
+		Update: func(effect Update) RuntimeContext {
+			return RuntimeContext{
+				OK:  true,
+				Err: nil,
+				Ctx: nil,
+			}
+		},
+
+		Delete: func(effect Delete) RuntimeContext {
+			return RuntimeContext{
+				OK:  true,
+				Err: nil,
+				Ctx: nil,
 			}
 		},
 	}

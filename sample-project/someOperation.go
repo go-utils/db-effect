@@ -9,7 +9,7 @@ import (
 func someOperation() []DBEffect {
 	return []DBEffect{
 		repos.InsertInt{"table1", 10},
-		repos.SelectString{"table2", "someValue", 3},
+		repos.SelectString{"table2", "someQuery"},
 		repos.InsertInt{"table5", 27},
 		ValidateInsert(repos.InsertNade{"tableNade", structs.Nade{108}}),
 		ValidateInsert(repos.InsertNade{"tableNade", structs.Nade{57}}),

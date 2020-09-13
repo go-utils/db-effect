@@ -1,4 +1,4 @@
-package go_repo_gen
+package db_effect
 
 type Any interface {
 }

@@ -1,4 +1,4 @@
-package go_repo_gen
+package db_effect
 
 func GetNotNilList(effects []DBEffect, DB Interpreter) ([]Any, error) {
 	var resList []Any

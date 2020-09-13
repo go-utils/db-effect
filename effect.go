@@ -1,18 +1,28 @@
-package go_repo_gen
+package db_effect
 
 // Insert
 type Insert interface {
 	Apply(Interpreter) RuntimeContext
-	InsertionParam() (string, Any)
+	InsertionParam() (DBName string, newValue Any)
 }
 
 // Select
 type Select interface {
 	Apply(Interpreter) RuntimeContext
-	SelectionParam() (string, Any, int)
+	SelectionParam() (DBName string, query Any)
 }
 
-// TODO: add Update, Delete
+// Update
+type Update interface {
+	Apply(Interpreter) RuntimeContext
+	UpdateParam() (DBName string, newValue Any, upsert bool)
+}
+
+// Delete
+type Delete interface {
+	Apply(Interpreter) RuntimeContext
+	DeletionParam() (DBName string, oldValue Any)
+}
 
 type DBEffect interface {
 	Apply(ip Interpreter) RuntimeContext

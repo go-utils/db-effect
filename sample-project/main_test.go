@@ -17,14 +17,14 @@ func makeMockDB_1() Interpreter {
 		},
 
 		Select: func(effect Select) RuntimeContext {
-			// tableName, existingValue, limit
-			_, existingValue, limit := effect.SelectionParam()
+			// tableName, query
+			_, query := effect.SelectionParam()
 
 			// vv for Testing vv //
-			// 検索に使われた文字列をひたすら返すようなDB (理由は特にない)
-			foundVal := existingValue.(string)
+			// 検索に使われた文字列を4つ返すようなDB (理由は特にない)
+			foundVal := query.(string)
 			var res []string
-			for i := 0; i < limit; i++ {
+			for i := 0; i < 4; i++ {
 				res = append(res, foundVal)
 			}
 			// ^^ for Testing ^^ //
@@ -51,7 +51,7 @@ func TestMain(t *testing.T) {
 	}
 
 	expected := []Any{
-		[]string{"someValue", "someValue", "someValue"},
+		[]string{"someQuery", "someQuery", "someQuery", "someQuery"},
 	}
 	if !reflect.DeepEqual(expected, resList) {
 		t.Fatal(fmt.Sprintf("response: %#v <> %#v", expected, resList))
