@@ -20,7 +20,7 @@ func MockDB() Interpreter {
 			return RuntimeContext{
 				OK:  true,
 				Err: nil,
-				Ctx: query,  // should return something
+				Ctx: query, // should return something
 			}
 		},
 
