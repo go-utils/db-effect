@@ -1,3 +1,3 @@
-# go-repo-gen
+# DB-Effect
 
 Wikiを参照
