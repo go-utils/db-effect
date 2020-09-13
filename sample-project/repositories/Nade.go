@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	. "github.com/go-utils/go-repo-gen"
-	"github.com/go-utils/go-repo-gen/sample-project/structs"
+	. "github.com/go-utils/db-effect"
+	"github.com/go-utils/db-effect/sample-project/structs"
 )
 
 // Insert for specific type

@@ -1,9 +1,9 @@
 package main
 
 import (
-	. "github.com/go-utils/go-repo-gen"
-	repos "github.com/go-utils/go-repo-gen/sample-project/repositories"
-	"github.com/go-utils/go-repo-gen/sample-project/structs"
+	. "github.com/go-utils/db-effect"
+	repos "github.com/go-utils/db-effect/sample-project/repositories"
+	"github.com/go-utils/db-effect/sample-project/structs"
 )
 
 func someOperation() []DBEffect {

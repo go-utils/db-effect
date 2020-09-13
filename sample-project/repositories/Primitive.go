@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	. "github.com/go-utils/go-repo-gen"
+	. "github.com/go-utils/db-effect"
 )
 
 // ------------ int / Insert ------------//
