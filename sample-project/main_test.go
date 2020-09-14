@@ -52,14 +52,15 @@ func TestMain(t *testing.T) {
 
 	// ここで直接 `effects` を検査する
 
-	talbesToAffect := map[string]bool{
-		"table1":    true,
-		"table2":    true,
-		"table3":    true,
-		"table4":    false, // talbe4 を弄ってはいけない
-		"table5":    true,
-		"tableNade": true,
-	}
+	talbesToAffect :=
+		map[string]bool{
+			"table1":    true,
+			"table2":    true,
+			"table3":    true,
+			"table4":    false, // talbe4 を弄ってはいけない
+			"table5":    true,
+			"tableNade": true,
+		}
 	for _, effect := range effects {
 		switch effect := effect.(type) {
 		case Insert:
